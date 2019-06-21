@@ -1,21 +1,46 @@
-import React, { Fragment } from 'react';
-import ReactDOM from 'react-dom';
-import { createGlobalStyle } from 'styled-components';
-import App from './App';
+import { addClass, removeClass } from './utils/dom';
 
-// Add global styles directly
-const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
+const accordion = () => {
+  const element = document.getElementById('accordion');
+  
+  const getSections = () => {
+    return element.querySelectorAll('dt');
+  };
+  
+
+  const showSection = (section) => {
+    removeClass(section, 'collapsed');
+    addClass(section, 'active');
+  };
+
+  const hideSection = (section) => {
+    addClass(section, 'collapsed');
+    removeClass(section, 'active');
   }
-`
 
-ReactDOM.render(
-  <Fragment>
-    <GlobalStyle />
-    <App />
-  </Fragment>,
-  document.getElementById('root')
-);
+  const toggle = (e) => {
+    sections.forEach((section) => {
+      if (e.target === section) {
+        showSection(section);
+      } else {
+        hideSection(section);
+      }
+    });
+  };
+
+  const sections = getSections();
+  
+  sections.forEach((section) => {
+    addClass(section, 'collapsed');
+
+    section.addEventListener('click', toggle)
+  });
+
+  // Show first section by default
+  showSection(sections[0]);
+
+};
+
+accordion();
+
+export default accordion;

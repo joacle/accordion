@@ -4,7 +4,9 @@
   "description": "Adevinta coding challenge",
   "main": "index.js",
   "scripts": {
-    "test": "stryker run",
+    "mutate": "stryker run",
+    "coverage": "jest --env=jsdom --coverage",
+    "test": "jest --env=jsdom",
     "build": "webpack --mode=production",
     "start": "webpack-dev-server --open --mode development"
   },
@@ -29,5 +31,15 @@
     "webpack-cli": "^3.3.4",
     "webpack-dev-server": "^3.7.1"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/__mocks__/fileMock.js"
+    },
+    "modulePathIgnorePatterns": [
+      "<rootDir>/src/__mocks__",
+      "<rootDir>[/\\\\](dist|reports|node_modules|.stryker-tmp)[/\\\\]",
+      "index.js"
+    ]
+  }
 }
