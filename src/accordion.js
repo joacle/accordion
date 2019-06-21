@@ -1,4 +1,6 @@
 import { addClass, removeClass } from './utils/dom';
+import { SECTION_CLASSNAMES } from './utils/constants';
+import './accordion.sass';
 
 const accordion = () => {
   const element = document.getElementById('accordion');
@@ -9,13 +11,13 @@ const accordion = () => {
   
 
   const showSection = (section) => {
-    removeClass(section, 'collapsed');
-    addClass(section, 'active');
+    removeClass(section, SECTION_CLASSNAMES.COLLAPSED);
+    addClass(section, SECTION_CLASSNAMES.ACTIVE);
   };
 
   const hideSection = (section) => {
-    addClass(section, 'collapsed');
-    removeClass(section, 'active');
+    addClass(section, SECTION_CLASSNAMES.COLLAPSED);
+    removeClass(section, SECTION_CLASSNAMES.ACTIVE);
   }
 
   const toggle = (e) => {
@@ -31,7 +33,7 @@ const accordion = () => {
   const sections = getSections();
   
   sections.forEach((section) => {
-    addClass(section, 'collapsed');
+    addClass(section, SECTION_CLASSNAMES.COLLAPSED);
 
     section.addEventListener('click', toggle)
   });
