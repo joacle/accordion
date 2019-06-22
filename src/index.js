@@ -1,5 +1,5 @@
 import accordion from './accordion';
 
-accordion();
+new accordion(document.getElementById('accordion'));
 
 export default accordion;

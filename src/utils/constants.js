@@ -1,6 +1,6 @@
 const SECTION_CLASSNAMES = {
-    ACTIVE: 'accordion-section--active',
-    COLLAPSED: 'accordion-section--collapsed'
+    ACTIVE: 'section--active',
+    COLLAPSED: 'section--collapsed'
 }
 
 export {
