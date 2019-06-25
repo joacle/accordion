@@ -3,6 +3,10 @@
 module.exports = function(config) {
   config.set({
     files: ["src/**/*.js?(x)", "src/**/*@(.test|.spec|Spec).js?(x)"],
+    "files-to-exclude": [
+      "index.js",
+      "./src/__mocks__/"
+    ],
     mutate: ["src/**/*.js?(x)", "!src/**/*@(.test|.spec|Spec).js?(x)"],
     mutator: "javascript",
     testRunner: "jest",
