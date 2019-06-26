@@ -1,5 +1,12 @@
 import accordion from './accordion';
+import { Get } from './utils/ajax';
 
-new accordion(document.getElementById('accordion'));
+async function init() {
+    const data = await Get('https://jsonplaceholder.typicode.com/users');
+    
+    new accordion(document.getElementById('accordion'), data);
+}
+
+init();
 
 export default accordion;

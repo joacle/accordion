@@ -23,4 +23,8 @@ Title.prototype.collapse = function() {
     this.content.collapse();
 };
 
+Title.prototype.getContent = function() {
+    return this.content.getElement();
+};
+
 export default Title;
