@@ -1,6 +1,6 @@
 const SECTION_CLASSNAMES = {
-    ACTIVE: 'section--active',
-    COLLAPSED: 'section--collapsed'
+    ACTIVE: 'section-content--active',
+    COLLAPSED: 'section-content--collapsed'
 }
 
 export {

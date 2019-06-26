@@ -1,32 +1,32 @@
-import Section from '../section';
+import Title from '../title';
 import { SECTION_CLASSNAMES } from '../../../utils/constants';
 
-describe('Section', () => {
+describe('Title', () => {
     test('class is added', () => {
         const div = document.createElement('div');
-        new Section(div);
-        expect(div.classList.contains('section')).toBeTruthy();
+        new Title(div);
+        expect(div.classList.contains('section-title')).toBeTruthy();
     });
 
     test('is collapsed', () => {
         const div = document.createElement('div');
-        new Section(div);
+        new Title(div);
         expect(div.classList.contains(SECTION_CLASSNAMES.COLLAPSED)).toBeTruthy();
     });
 
     test('getElement returns html element', () => {
         const div = document.createElement('div');
-        const section = new Section(div);
-        expect(section.getElement()).toBe(div);
+        const title = new Title(div);
+        expect(title.getElement()).toBe(div);
     });
 
     test('element collapses and expands', () => {
         const div = document.createElement('div');
-        const section = new Section(div);
+        const title = new Title(div);
         expect(div.classList.contains(SECTION_CLASSNAMES.COLLAPSED)).toBeTruthy();
-        section.expand();
+        title.expand();
         expect(div.classList.contains(SECTION_CLASSNAMES.ACTIVE)).toBeTruthy();
-        section.collapse();
+        title.collapse();
         expect(div.classList.contains(SECTION_CLASSNAMES.COLLAPSED)).toBeTruthy();
     });
 });
