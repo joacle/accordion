@@ -1,5 +1,4 @@
 import Accordion from '../accordion';
-import { SECTION_CLASSNAMES } from '../../utils/constants';
 
 describe('Accordion', () => {
     test('class is added', () => {
