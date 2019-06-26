@@ -24,3 +24,7 @@
 ### kill mutants
 
 ``` mpm run mutate ```
+
+## Demo
+
+[Demo](https://joacle.github.io/accordion/)
