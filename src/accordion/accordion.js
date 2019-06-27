@@ -16,32 +16,28 @@ const Accordion = function(element, data) {
         return section;
     };
     
-    const addDynamicSection = () => {
+    const addDynamicSection = ({ title, data }) => {
         const dt = document.createElement('dt');
         const dd = document.createElement('dd');
         this.element.appendChild(dt);
         this.element.appendChild(dd);
 
-        dt.innerText = "Users";
+        dt.innerText = title;
 
         const section = createSection(dt);
 
         const content = section.getContent();
 
-        JSON.parse(data).forEach((item) => {
+        data.forEach((item) => {
             const p = document.createElement('p');
-            p.innerHTML += item.name;
+            p.innerHTML += item.value;
             content.appendChild(p);
         });
     };
 
-    this.element.querySelectorAll('dt').forEach((dt) => {
-        createSection(dt);
+    data.forEach((item) => {
+        addDynamicSection(item);
     });
-    
-    if (data) {
-        addDynamicSection();
-    }
 
     this.sections.length && this.sections[0].expand();
 };
