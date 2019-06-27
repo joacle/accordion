@@ -8,35 +8,16 @@ const Accordion = function(element, data) {
     
     addClass(element, 'accordion');
     
-    const createSection = (dt) => {
-        const section = new Section(dt);
+    const createSection = (data) => {
+        const section = new Section(this.element, data);
         section.getElement().addEventListener('expanded', this.toggle.bind(this));
         this.sections.push(section);
 
         return section;
     };
     
-    const addDynamicSection = ({ title, data }) => {
-        const dt = document.createElement('dt');
-        const dd = document.createElement('dd');
-        this.element.appendChild(dt);
-        this.element.appendChild(dd);
-
-        dt.innerText = title;
-
-        const section = createSection(dt);
-
-        const content = section.getContent();
-
-        data.forEach((item) => {
-            const p = document.createElement('p');
-            p.innerHTML += item.value;
-            content.appendChild(p);
-        });
-    };
-
     data.forEach((item) => {
-        addDynamicSection(item);
+        createSection(item);
     });
 
     this.sections.length && this.sections[0].expand();

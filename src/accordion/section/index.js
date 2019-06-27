@@ -1,3 +1,3 @@
-import Title from './title';
+import Section from './section';
 
-export default Title;
+export default Section;

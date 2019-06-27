@@ -2,10 +2,16 @@ import { addClass, removeClass } from '../../utils/dom';
 import { SECTION_CLASSNAMES } from '../../utils/constants';
 import './content.sass';
 
-const Content = function(element) {
+const Content = function(element, data) {
     this.element = element;
     addClass(this.element, 'section-content');
     addClass(this.element, SECTION_CLASSNAMES.COLLAPSED);
+
+    data.forEach((item) => {
+        const p = document.createElement('p');
+        p.innerHTML += item.value;
+        this.element.appendChild(p);
+    });
 };
 
 Content.prototype.getElement = function() {
