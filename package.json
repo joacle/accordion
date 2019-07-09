@@ -4,7 +4,7 @@
   "description": "Vanilla accordion",
   "main": "index.js",
   "scripts": {
-    "mutate": "stryker run",
+    "mutate": "npx stryker run",
     "coverage": "jest --env=jsdom --coverage",
     "test": "jest --env=jsdom",
     "build": "webpack --mode=production",

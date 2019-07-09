@@ -2,8 +2,6 @@
 
 ## Setup environment
 
-``` npm i -g stryker ```
-
 ``` npm i ```
 
 
