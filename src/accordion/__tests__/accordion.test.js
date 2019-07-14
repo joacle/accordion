@@ -1,4 +1,5 @@
 import Accordion from '../accordion';
+import { SECTION_CLASSNAMES } from '../../utils/constants';
 
 describe('Accordion', () => {
     const data = [
@@ -22,5 +23,15 @@ describe('Accordion', () => {
         expect(div.classList.contains('accordion')).toBeTruthy();
     });
 
+    test('sections are created', () => {
+        const div = document.createElement('div');
+        const accordion = new Accordion(div, data);
+        expect(accordion.sections.length).toBe(3);
+    });
 
+    test('first section is expanded', () => {
+        const div = document.createElement('div');
+        const accordion = new Accordion(div, data);
+        expect(accordion.sections[0].content.getElement().classList.contains(SECTION_CLASSNAMES.ACTIVE)).toBeTruthy();
+    });
 });
