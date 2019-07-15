@@ -1,4 +1,4 @@
-import { addClass, removeClass } from '../../utils/dom';
+import { addClass, removeClass } from '../../../utils/dom';
 import './title.sass';
 
 const Title = function(element, title) {

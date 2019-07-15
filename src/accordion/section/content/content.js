@@ -1,5 +1,5 @@
-import { addClass, removeClass } from '../../utils/dom';
-import { SECTION_CLASSNAMES } from '../../utils/constants';
+import { addClass, removeClass } from '../../../utils/dom';
+import { SECTION_CLASSNAMES } from '../../../utils/constants';
 import './content.sass';
 
 const Content = function(element, data) {
