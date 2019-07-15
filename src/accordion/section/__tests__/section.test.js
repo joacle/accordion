@@ -31,7 +31,6 @@ describe('Title', () => {
 
     test('collapse and expand', () => {
         const dd = getNewAccordionHtml();
-        console.log(data);
         const section = new Section(dd, data);
         section.collapse();
         section.getContent().classList.contains(SECTION_CLASSNAMES.COLLAPSED);
